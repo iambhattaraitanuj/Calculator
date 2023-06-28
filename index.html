@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Montserrat:wght@300;400&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: rgb(245, 241, 241);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+
+    }
+
+    .container {
+        height: 550px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        width: 350px;
+        box-shadow: 0px 1px 5px black;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .box {
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0px 1px 4px black;
+        border: none;
+    }
+
+    .sub {
+        margin: 0 10px;
+    }
+
+    .addsub {
+        display: flex;
+    }
+
+    .div {
+        margin: 0 10px;
+
+    }
+
+    .muldiv {
+        display: flex;
+    }
+
+    input[type='number'] {
+        font-size: 17px;
+        width: 235px;
+        /* border-radius: 25px; */
+        padding: 5px;
+        height: 25px;
+        border: none;
+        box-shadow: 0px 1px 4px black;
+        outline: none;
+    }
+
+    ::placeholder {
+        margin: 1rem 1rem;
+    }
+
+    header {
+        font-size: 2rem;
+    }
+
+    .btn1 {
+        height: 40px;
+        font-size: 17px;
+        padding: 5px;
+        width: 70px;
+        background-color: #fccb06;
+        cursor: pointer;
+        border: none;
+        /* border-radius: 25px; */
+        box-shadow: 0px 1px 3px #b69204;
+    }
+
+
+    .btn2 {
+        height: 40px;
+        font-size: 17px;
+        padding: 5px;
+        width: 150px;
+        background-color: #212222;
+        box-shadow: 0px 1px 3px #000000;
+        border: none;
+        /* border-radius: 25px; */
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn3 {
+        height: 40px;
+        font-size: 17px;
+        padding: 5px;
+        width: 140px;
+        background-color: #212222;
+        box-shadow: 0px 1px 3px #000000;
+        color: white;
+        border: none;
+        /* border-radius: 25px; */
+        cursor: pointer;
+    }
+
+    .btn4 {
+        height: 40px;
+        font-size: 17px;
+        padding: 5px;
+        width: 80px;
+        background-color: #fccb06;
+        box-shadow: 0px 1px 3px #b69204;
+        cursor: pointer;
+        border: none;
+        /* border-radius: 25px; */
+    }
+
+    .btn1:hover,
+    .btn2:hover,
+    .btn3:hover,
+    .btn4:hover {
+        opacity: 0.9;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="contents">
+            <header>Calculator</header><br>
+            <div class="input1">
+                <input type="number" id="fnumber" placeholder="Enter first number" required>
+            </div><br>
+            <div class="input2">
+                <input type="number" id="snumber" placeholder="Enter second number" required>
+            </div><br>
+            <div>
+                <h3>Output is:
+                    <box class="box" id="output"></box>
+                </h3>
+            </div><br>
+            <div class="addsub">
+                <div class="add">
+                    <button type="btn" class="btn1" onclick="add()">Add</button>
+                </div>
+                <div class="sub">
+                    <button type="btn" class="btn2" onclick="sub()">Subtraction</button>
+                </div>
+            </div><br>
+            <div class="muldiv">
+
+                <div class="mul">
+                    <button type="btn" class="btn3" onclick="mul()">Multiplication</button>
+                </div>
+                <div class="div">
+                    <button type="btn" class="btn4" onclick="div()">Division</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // const number = '1234';
+
+        // console.log(parseFloat(a) + parseFloat(b))
+        // console.log(number + 1);
+
+        function add() {
+            let a = document.getElementById('fnumber').value;
+            let b = document.getElementById('snumber').value;
+            document.getElementById('output').innerHTML = parseFloat(a) + parseFloat(b);
+            // document.getElementById('output').innerHTML = (+a) + (+b);
+
+        }
+        function sub() {
+            let a = document.getElementById('fnumber').value;
+            let b = document.getElementById('snumber').value;
+            document.getElementById('output').innerHTML = parseFloat(a) - parseFloat(b);
+        }
+
+        function mul() {
+            let a = document.getElementById('fnumber').value;
+            let b = document.getElementById('snumber').value;
+            document.getElementById('output').innerHTML = parseFloat(a) * parseFloat(b);
+        }
+
+        function div() {
+            let a = document.getElementById('fnumber').value;
+            let b = document.getElementById('snumber').value;
+            document.getElementById('output').innerHTML = parseFloat(a) / parseFloat(b);
+        }
+    </script>
+</body>
+
+
+</html>
